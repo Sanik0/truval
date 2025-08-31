@@ -1,0 +1,1386 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+:root {
+    --font-color: #5E6282;
+    --font-dark: #14183E;
+    --font-darker: #212832;
+    --light-purple: #f2eeff;
+    --bg-color: #FFFFFF;
+    --grey-color: #E5E5E5;
+    --primary-color: #df6951;
+    --yellow-color: #f1a501;
+    --sample-font: "Volkhov", serif;
+
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    scroll-behavior: smooth;
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    overflow-x: hidden;
+    flex-direction: column;
+}
+
+/* ======================= FONTS ==================================== */
+/* ======== VOLKHOV ======= */
+
+.volkhov-regular {
+    font-family: var(--sample-font);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.volkhov-bold {
+    font-family: "Volkhov", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.volkhov-regular-italic {
+    font-family: "Volkhov", serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.volkhov-bold-italic {
+    font-family: "Volkhov", serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* ======== POPPINS ======= */
+
+.poppins-thin {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.poppins-extralight {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.poppins-light {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.poppins-medium {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.poppins-semibold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.poppins-bold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.poppins-extrabold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.poppins-black {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.poppins-thin-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+}
+
+.poppins-extralight-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: italic;
+}
+
+.poppins-light-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.poppins-regular-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.poppins-medium-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.poppins-semibold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.poppins-bold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.poppins-extrabold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: italic;
+}
+
+.poppins-black-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+}
+
+/* ================Google sans ============= */
+
+
+.google-sans {
+    font-family: "Google Sans Code", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.background-svg {
+    width: 100%;
+    max-width: 1540px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    justify-content: flex-end;
+    z-index: -1;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+header .headers {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 1160px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+header .logo svg {
+    height: 35px;
+    width: 35px;
+    fill: var(--font-color);
+}
+
+header .logo svg.open {
+    display: none;
+}
+
+header .logo svg.close {
+    display: none;
+}
+
+
+header .menu-container {
+    width: 100%;
+    max-width: 1160px;
+    display: flex;
+    padding: 0 15px;
+    flex-direction: column;
+    background: var(--bg-color);
+    gap: 10px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+header .menu-container.show {
+    max-height: 500px;
+    border-bottom: 1px solid var(--font-darker);
+}
+
+header .menu-container a {
+    color: var(--font-darker);
+    font-weight: 500;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--font-dark);
+    text-decoration: none;
+    width: fit-content;
+    font-size: 18px;
+}
+
+header .menu-container a.first {
+    margin-top: 15px;
+}
+
+header .menu-container a.last {
+    margin-bottom: 15px;
+}
+
+
+header nav {
+    display: flex;
+}
+
+header nav .nav-item {
+    margin-left: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header nav .nav-item a {
+    font-size: 17px;
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--font-darker);
+    transition: .3s ease;
+}
+
+header nav .nav-item a:hover {
+    color: var(--font-color);
+}
+
+header nav .nav-item.button-signup {
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: 1px solid var(--font-darker);
+    transition: .3s ease;
+}
+
+header nav .nav-item.button-signup:hover {
+    background: var(--font-darker);
+}
+
+header nav .nav-item.button-signup:hover a {
+    color: white;
+}
+
+header nav .nav-item.select select {
+    border: none;
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--font-darker);
+    transition: .3s ease;
+    background: transparent;
+}
+
+header nav .nav-item.select select:hover {
+    color: var(--font-color);
+    cursor: pointer;
+}
+
+header nav .nav-item.select select:focus {
+    outline: none;
+}
+
+/* ======================= HERO SECTION ==================================== */
+
+.section-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1160px;
+    margin-top: -80px;
+}
+
+.section-hero .texts-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.section-hero .texts-container .tagline {
+    font-size: 20px;
+    color: var(--primary-color);
+}
+
+.section-hero .texts-container h1 {
+    font-size: 84px;
+    color: var(--font-darker);
+}
+
+.section-hero .texts-container p {
+    font-size: 16px;
+    line-height: 30px;
+    max-width: 477px;
+    color: var(--font-color);
+}
+
+.section-hero .texts-container .buttons-container {
+    display: flex;
+    align-items: center;
+    gap: 44px;
+}
+
+.section-hero .texts-container .buttons-container .button-find-out {
+    background: var(--yellow-color);
+    border-radius: 10px;
+    font-size: 18px;
+    color: white;
+    padding: 15px 20px;
+    box-shadow: 0px 10px 20px rgba(241, 165, 1, 0.3);
+    transition: .3s ease;
+}
+
+.section-hero .texts-container .buttons-container .button-find-out:hover {
+    transform: translateY(-3px);
+    cursor: pointer;
+}
+
+.section-hero .texts-container .buttons-container .play-demo-container {
+    display: flex;
+    align-items: center;
+    gap: 21px;
+    justify-content: center;
+    transition: .3s ease;
+}
+
+.section-hero .texts-container .buttons-container .play-demo-container:hover {
+    transform: translateY(-3px);
+    cursor: pointer;
+}
+
+.section-hero .texts-container .buttons-container .play-demo-container .svg-container {
+    height: 52px;
+    width: 52px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 10px 20px rgba(223, 105, 81, 0.3);
+}
+
+.section-hero .image-container {
+    width: 100%;
+    margin-left: -200px;
+}
+
+/* ======================= SERVICES SECTION ==================================== */
+
+.section-services {
+    width: 100%;
+    position: relative;
+    max-width: 1228px;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.section-services .svg-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.section-services .headings {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 100px;
+    justify-content: center;
+}
+
+.section-services .headings h1 {
+    font-size: 50px;
+    color: var(--font-dark);
+}
+
+.section-services .cards-container {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.section-services .cards-container .svg-container-cards {
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+    margin-left: 300px;
+}
+
+.section-services .cards-container .card {
+    margin-bottom: 40px;
+    border-radius: 36px;
+    background: var(--bg-color);
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 267px;
+    cursor: pointer;
+    transition: box-shadow .3s ease;
+    height: 314px;
+}
+
+.section-services .cards-container .card.flight .svg-container-card {
+    margin-bottom: -50px;
+}
+
+
+.section-services .cards-container .card:hover {
+    box-shadow: 0px 10px 50px rgba(20, 24, 62, 0.1);
+}
+
+.section-services .cards-container .card .texts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.section-services .cards-container .card .texts-container h3 {
+    width: 100%;
+    white-space: nowrap;
+}
+
+.section-services .cards-container .card .texts-container {
+    padding: 0 50px;
+}
+
+/* ======================= DESTINATIONS SECTION ==================================== */
+
+.section-destinations {
+    width: 100%;
+    position: relative;
+    max-width: 1228px;
+    padding: 0 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.section-destinations .svg-container {
+    position: absolute;
+    top: 75%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.section-destinations .headings {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 100px;
+    justify-content: center;
+}
+
+.section-destinations .headings h1 {
+    font-size: 50px;
+    color: var(--font-dark);
+}
+
+.section-destinations .cards-container {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.section-destinations .cards-container .card {
+    border-radius: 24px;
+    width: 100%;
+    max-width: 314px;
+    height: 457px;
+    overflow: hidden;
+    transition: box-shadow .3s ease;
+    cursor: pointer;
+}
+
+.section-destinations .cards-container .card:hover {
+    box-shadow: 0px 10px 50px rgba(20, 24, 62, 0.1);
+
+}
+
+.section-destinations .cards-container .card .image-container {
+    overflow: hidden;
+    width: 100%;
+    height: 327px;
+}
+
+.section-destinations .cards-container .card .image-container img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-position: center;
+}
+
+.section-destinations .cards-container .card .texts-container {
+    padding: 30px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.section-destinations .cards-container .card .texts-container h3 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.section-destinations .cards-container .card .days-container {
+    display: flex;
+    padding: 0 20px;
+    align-items: center;
+    font-weight: 500;
+    gap: 10px
+}
+
+/* ======================= BOOKING SECTION ==================================== */
+
+.section-booking {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 50px;
+    max-width: 1114px;
+}
+
+.section-booking .descriptions-container {
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    width: 100%;
+}
+
+.section-booking .descriptions-container h1 {
+    font-size: 50px;
+    color: var(--font-dark);
+}
+
+.section-booking .descriptions-container p.heading {
+    font-size: 18px;
+}
+
+.section-booking .descriptions-container .cards-container {
+    display: flex;
+    margin-top: 25px;
+    gap: 30px;
+    flex-direction: column;
+}
+
+.section-booking .descriptions-container .cards-container .card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.section-booking .descriptions-container .cards-container .card .texts-container {
+    display: flex;
+    width: 100%;
+    max-width: 327px;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.section-booking .image-container {
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+/* ======================= TERTIMONIALS SECTION ==================================== */
+
+.section-testimonials {
+    width: 100%;
+    position: relative;
+    max-width: 1165px;
+    gap: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.section-testimonials .headings {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+}
+
+.section-testimonials .headings h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.section-testimonials .headings h1 {
+    font-size: 50px;
+    margin-bottom: 60px;
+    color: var(--font-dark);
+}
+
+.section-testimonials .headings .paginations {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.section-testimonials .headings .paginations .pagination {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background: var(--grey-color);
+}
+
+.section-testimonials .headings .paginations .pagination.active {
+    background: var(--font-dark);
+}
+
+.section-testimonials .testimonials-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.section-testimonials .testimonials-container .cards {
+    position: relative;
+    height: 300px;
+    overflow: auto;
+}
+
+.section-testimonials .testimonials-container .card .profile-container {
+    margin-bottom: -30px;
+}
+
+.section-testimonials .testimonials-container .cards .card .image-container {
+    height: 68px;
+    width: 68px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.section-testimonials .testimonials-container .cards .card .image-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.section-testimonials .testimonials-container .cards .card .texts-container {
+    width: 100%;
+    max-width: 504px;
+    margin-left: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 10px rgba(20, 24, 62, 0.1);
+    padding: 30px 20px;
+    line-height: 30px;
+}
+
+.section-testimonials .testimonials-container .cards .card .texts-container p.testimonial {
+    margin-bottom: 30px;
+}
+
+.section-testimonials .testimonials-container .navigations {
+    height: 71px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.section-testimonials .testimonials-container .navigations svg:hover {
+    cursor: pointer;
+}
+
+/* ======================= LOGOS SECTION ==================================== */
+
+.section-logos {
+    margin: 0 auto;
+    padding: 20px 0;
+    max-width: 1073px;
+    overflow: hidden;
+    display: flex;
+}
+
+.section-logos .logo {
+    width: 100%;
+    justify-content: center;
+}
+
+.section-logos .logo svg {
+    height: 130px;
+    width: 130px;
+}
+
+.section-logos .group {
+    display: flex;
+    gap: 50px;
+    padding-right: 20px;
+    will-change: transform;
+    animation: scrolling 10s linear infinite;
+}
+
+@keyframes scrolling {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* ======================= SUBSCRIBE SECTION ==================================== */
+
+.section-subscribe {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1257px;
+}
+
+.section-subscribe .svg-container.plane {
+    position: absolute;
+    right: 0;
+    margin-right: 195px;
+    top: 0;
+    z-index: 10;
+}
+
+.section-subscribe .svg-container.bottom {
+    position: absolute;
+    right: 0;
+    margin-right: 100px;
+    bottom: 0;
+    z-index: -1;
+}
+
+.section-subscribe .subscribe-container {
+    width: 100%;
+    position: relative;
+    max-width: 1170px;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 129px 50px 20px 20px;
+    overflow: hidden;
+    margin: 20px 200px 50px 0;
+    background: var(--light-purple);
+}
+
+.section-subscribe .svg-subscribe.bottom {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.section-subscribe .svg-subscribe.top {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.section-subscribe .subscribe-container h1 {
+    width: 100%;
+    max-width: 659px;
+    line-height: 50px;
+    position: relative;
+    z-index: 10;
+    text-align: center;
+}
+
+
+.section-subscribe .subscribe-container .h1-container {
+    overflow: hidden;
+}
+
+
+.section-subscribe .subscribe-container form {
+    width: 100%;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.section-subscribe .subscribe-container form button {
+    background: var(--primary-color);
+    border-radius: 10px;
+    color: white;
+    font-size: 17px;
+    padding: 18px;
+    border: none;
+    font-weight: 600;
+}
+
+.section-subscribe .subscribe-container form button:hover {
+    transform: translateY(-3px);
+    transition: .3s ease;
+    cursor: pointer;
+}
+
+.section-subscribe .subscribe-container .form-input {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    max-width: 421px;
+}
+
+.section-subscribe .subscribe-container .form-input input {
+    border: none;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'poppins', sans-serif;
+    width: 100%;
+}
+
+.section-subscribe .subscribe-container .form-input input:focus {
+    outline: none;
+    border: none;
+}
+
+/* ======================= FOOTER SECTION ==================================== */
+
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.primary-logo {
+    color: var(--primary-color);
+}
+
+footer .links-container {
+    width: 100%;
+    max-width: 1228px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer .logo-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+footer .logo-container small {
+    max-width: 207px;
+}
+
+footer nav {
+    display: flex;
+    width: 100%;
+    max-width: 474px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer nav .nav-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+footer nav .nav-container h3 {
+    font-size: 21px;
+    margin-bottom: 10px;
+    color: var(--font-dark);
+}
+
+footer nav .nav-container a {
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--font-color);
+    text-decoration: none;
+}
+
+footer .socials-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+footer .socials-container .socials {
+    display: flex;
+}
+
+footer .socials-container .socials .svg-container:hover {
+    transform: translateY(-3px);
+    transition: .3s ease;
+    cursor: pointer;
+}
+
+footer small {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 767px) {
+
+    .background-svg {
+        max-width: 100%;
+    }
+
+    header .headers {
+        padding: 0 15px;
+        margin-top: 15px;
+    }
+
+    header .logo svg.open {
+        display: block;
+    }
+
+
+    header nav .nav-item {
+        display: none;
+    }
+
+    header nav .nav-item.button-signup {
+        display: flex;
+    }
+
+    /* ======================  HERO SECTION ====================== */
+
+    .section-hero {
+        flex-direction: column;
+    }
+
+    .section-hero .texts-container {
+        padding: 0 15px;
+        flex-direction: column;
+    }
+
+    .section-hero .texts-container .tagline {
+        font-size: 16px;
+    }
+
+    .section-hero .texts-container h1 {
+        font-size: 50px;
+    }
+
+    .section-hero .texts-container p {
+        font-size: 16px;
+    }
+
+    .section-hero .texts-container .buttons-container {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .section-hero .texts-container .buttons-container .button-find-out {
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+
+    .section-hero .texts-container .buttons-container .play-demo-container {
+        gap: 10px;
+    }
+
+    .section-hero .texts-container .buttons-container .play-demo-container .svg-container {
+        height: 40px;
+        width: 40px;
+    }
+
+    .section-hero .image-container {
+        width: 100%;
+        margin-top: 30px;
+        margin-left: 0px;
+        padding-right: 40px;
+    }
+
+    .section-hero .image-container img {
+        height: 100%;
+        width: 100%;
+    }
+
+
+    /* ======================= SERVICES SECTION ==================================== */
+
+    .section-services {
+        max-width: 100%;
+        padding: 15px;
+
+    }
+
+    .section-services .svg-container {
+        z-index: -1;
+        margin-top: 20px;
+    }
+
+    .section-services .headings {
+        margin-bottom: 30px;
+    }
+
+    .section-services .headings h1 {
+        font-size: 50px;
+    }
+
+    .section-services .headings p {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .section-services .cards-container {
+        flex-direction: column;
+    }
+
+
+    /* ======================= DESTINATIONS SECTION ==================================== */
+
+    .section-destinations {
+        padding: 0 15px;
+    }
+
+    .section-destinations .svg-container {
+        position: absolute;
+        top: 75%;
+        right: 0;
+        transform: translateY(-50%);
+        z-index: -1;
+    }
+
+    .section-destinations .headings {
+        margin-bottom: 30px;
+    }
+
+    .section-destinations .headings p {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .section-destinations .cards-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .section-destinations .cards-container .card {
+        background: var(--bg-color);
+    }
+
+
+    /* ======================= BOOKING SECTION ==================================== */
+
+    .section-booking {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .section-booking .descriptions-container {
+        display: flex;
+        gap: 15px;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .section-booking .descriptions-container h1 {
+        font-size: 50px;
+        color: var(--font-dark);
+    }
+
+    .section-booking .descriptions-container p.heading {
+        font-size: 18px;
+    }
+
+    .section-booking .descriptions-container .cards-container {
+        display: flex;
+        margin-top: 25px;
+        gap: 30px;
+        flex-direction: column;
+    }
+
+    .section-booking .descriptions-container .cards-container .card {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .section-booking .descriptions-container .cards-container .card .texts-container {
+        display: flex;
+        width: 100%;
+        max-width: 327px;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .section-booking .image-container {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .section-booking .image-container img {
+        height: 100%;
+        width: 100%;
+    }
+
+
+    /* ======================= TERTIMONIALS SECTION ==================================== */
+
+    .section-testimonials {
+        padding: 15px;
+        flex-direction: column;
+    }
+
+    .section-testimonials .headings h3 {
+        font-size: 16px;
+    }
+
+    .section-testimonials .testimonials-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .section-testimonials .testimonials-container .cards {
+        position: relative;
+        height: fit-content;
+        overflow: visible;
+    }
+
+    .section-testimonials .testimonials-container .card .profile-container {
+        margin-bottom: -30px;
+    }
+
+    .section-testimonials .testimonials-container .cards .card .texts-container {
+        margin-left: 0px;
+    }
+
+    /* ======================= LOGOS SECTION ==================================== */
+
+    
+    .section-logos {
+        max-width: 100%;
+    }
+
+    .section-logos .logo svg {
+        height: 80px;
+        width: 80px;
+    }
+
+
+    /* ======================= SUBSCRIBE SECTION ==================================== */
+
+    .section-subscribe {
+        padding: 15px;
+    }
+
+    .section-subscribe .svg-container.plane {
+        margin-right: 0;
+    }
+
+    .section-subscribe .svg-container.plane svg {
+        height: 40px;
+        width: 40px;
+    }
+
+    .section-subscribe .svg-subscribe.bottom svg {
+        height: 150px;
+        width: 150px;
+    }
+
+    .section-subscribe .svg-subscribe.top svg {
+        height: 150px;
+        width: 150px;
+    }
+
+    .section-subscribe .svg-container.bottom {
+        margin-right: 0px;
+    }
+
+    .section-subscribe .subscribe-container {
+        position: relative;
+        padding: 20px 20px;
+        gap: 20px;
+        border-radius: 20px 20px 20px 20px;
+        margin: 0px 0px 0px 0;
+    }
+
+    .section-subscribe .subscribe-container h1 {
+        line-height: 25px;
+        font-size: 23px;
+        text-align: left;
+    }
+
+    .section-subscribe .subscribe-container form {
+        gap: 10px;
+    }
+
+    .section-subscribe .subscribe-container form button {
+        border-radius: 8px;
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    .section-subscribe .subscribe-container .form-input {
+        padding: 10px 10px;
+        border-radius: 8px;
+    }
+
+    /* ======================= FOOTER SECTION ==================================== */
+    /* 
+    footer .links-container {
+        padding: 15px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    footer .logo-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    footer nav {
+        gap: 30px;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 30px;
+    }
+
+    
+    footer .socials-container .socials .svg-container {
+        margin-left: -10px;
+    }
+
+    footer .socials-container .socials .svg-container:hover {
+        transform: translateY(-3px);
+        transition: .3s ease;
+        cursor: pointer;
+    }
+
+    footer small {
+        font-size: 14px;
+        margin-bottom: 10px;
+    } */
+
+
+    footer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    footer .links-container {
+        padding: 15px;
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    footer .logo-container {
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+    }
+
+    footer .logo-container small {
+        text-align: center;
+    }
+
+    footer nav {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 30px;
+    }
+
+    footer nav .nav-container h3 {
+        margin-bottom: 0px;
+    }
+
+    footer .socials-container .socials {
+        display: flex;
+        margin-left: 15px;
+        text-align: center;
+    }
+
+    footer h3 {
+        text-align: center;
+    }
+
+    footer small {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+
+}
